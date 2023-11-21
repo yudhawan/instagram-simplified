@@ -1,0 +1,1 @@
+export const defaultPicture = 'https://www.transparentpng.com/thumb/user/gray-user-profile-icon-png-fP8Q1P.png'

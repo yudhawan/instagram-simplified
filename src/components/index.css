@@ -1,0 +1,12 @@
+
+@layer utilitie{
+    .userFeeds{
+        @apply flex flex-col max-w-[468px] w-full border-b border-gray-200 gap-4
+    }
+    .userFeeds:last-child{
+        @apply border-b-0
+    }
+    .infoBlockContainer{
+        @apply pr-10 pt-12 w-full max-w-xs lg:flex hidden lg:flex-col lg:gap-4
+    }
+}
