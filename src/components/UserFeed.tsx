@@ -14,8 +14,6 @@ function UserFeed({feed }:UserFeedType) {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
   } = useForm<Comment>()
   const onSubmit: SubmitHandler<Comment> = (data) => console.log(data)
   return (

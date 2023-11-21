@@ -10,7 +10,7 @@ function Profil() {
     const imgRef= useRef(null)
     const [img,setImg]=useState<any>(null)
     const [pict,setPict]=useState<String | null>(null)
-    const {register,handleSubmit,setValue, formState: { errors }} = useForm<Inputs&UserAuth>()
+    const {register,handleSubmit,setValue} = useForm<Inputs&UserAuth>()
     function handleImage(e:React.ChangeEvent<HTMLInputElement>){
         const file = e.target.files
         if(file){ 

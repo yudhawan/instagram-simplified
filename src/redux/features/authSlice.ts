@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { Inputs, UserAuth } from '../../types'
-import { RootState } from '../store'
 type UserType = UserAuth&Inputs
 const initialState: UserType = {
     id:'',
@@ -14,7 +13,7 @@ const initialState: UserType = {
     success:false
 }
 
-export const authServices = createAsyncThunk("getUsers", async (state,{getState}) => {
+export const authServices = createAsyncThunk("getUsers", async () => {
     
     let {data} = await axios({
         method: 'GET',

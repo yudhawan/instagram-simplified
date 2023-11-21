@@ -1,7 +1,7 @@
 import React from 'react'
 import { ModalWindowProps } from '../types'
 
-function ModalWindow({isOpen,modalId,handleOpen,handleId,children}:ModalWindowProps) {
+function ModalWindow({isOpen,handleOpen,handleId,children}:ModalWindowProps) {
     const handleBlur=(e:React.MouseEvent<HTMLDivElement>)=>{
         const target = e.target as HTMLElement
         if(target.className==='modalProvider'){
