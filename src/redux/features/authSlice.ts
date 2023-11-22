@@ -17,7 +17,7 @@ export const authServices = createAsyncThunk("getUsers", async () => {
     
     let {data} = await axios({
         method: 'GET',
-        url:'http://54.255.189.219:5000'+'/authservices',
+        url:import.meta.env.VITE_BASE_URL+'/authservices',
         params:{token:localStorage.getItem('__token')}
     }) 
     if(data.message==='expired') {
@@ -34,7 +34,7 @@ export const authServices = createAsyncThunk("getUsers", async () => {
     
 })
 export const userLogin = createAsyncThunk("login", async (data:Inputs) => {
-    const result = await axios.post('http://54.255.189.219:5000'+'/login', {data})
+    const result = await axios.post(import.meta.env.VITE_BASE_URL+'/login', {data})
     localStorage.setItem('__token', result.data?.token)
     localStorage.setItem('__username', result.data?.username)
     result.data?.name!==null?localStorage.setItem('__name', result.data?.name):''
@@ -43,7 +43,7 @@ export const userLogin = createAsyncThunk("login", async (data:Inputs) => {
     return result.data
 })
 export const updateUser = createAsyncThunk("update", async (data:UserType) => {
-    const result = await axios.post('http://54.255.189.219:5000'+'/updateUser', {data})
+    const result = await axios.post(import.meta.env.VITE_BASE_URL+'/updateUser', {data})
     result.data?.name!==null?localStorage.setItem('__name', result.data?.name):''
     result.data?.picture!==null?localStorage.setItem('__picture', result.data?.picture):''
     return result.data
