@@ -12,7 +12,7 @@ import Profil from './page/profil/Profil'
 import ModalProvider from './common/ModalProvider'
 import LoaderMain from './components/LoaderMain'
 
-// const socket = io(import.meta.env.VITE_BASE_URL)
+// const socket = io('http://54.255.189.219:5000')
 function App() {
   const token =useAppSelector(state=>state.authReducer.token)
   const loadingFeed =useAppSelector(state=>state.feedReducer.loading)

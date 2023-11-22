@@ -19,15 +19,15 @@ const initialState: CounterState = {
     users:[]
 }
 export const getFeeds = createAsyncThunk('getFeeds',async()=>{
-  const result = await axios.get(import.meta.env.VITE_BASE_URL+'/getFeeds')
+  const result = await axios.get('http://54.255.189.219:5000'+'/getFeeds')
   return result.data
 })
 export const getRandomUsers = createAsyncThunk('getRandomUsers',async()=>{
-  const result = await axios.get(import.meta.env.VITE_BASE_URL+'/getRandomUsers')
+  const result = await axios.get('http://54.255.189.219:5000'+'/getRandomUsers')
   return result.data
 })
 export const addFeeds = createAsyncThunk('addFeed',async(data:object)=>{
-  const result = await axios.post(import.meta.env.VITE_BASE_URL+'/addFeed', {data})
+  const result = await axios.post('http://54.255.189.219:5000'+'/addFeed', {data})
   return result.data
 })
 export const feedSlice = createSlice({
